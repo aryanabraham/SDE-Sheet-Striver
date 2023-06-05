@@ -13,3 +13,17 @@ of the array respectively.
 
 If currSum ever becomes less than 0, re-initialize it to 0 
 as the sum of an empty sub-array is taken to be 0.
+
+<<Next Permutation>>
+
+Assuming the longest possible prefix match, find the break-point
+in ascending order of numbers while traversing the array from right-to-left.
+
+Once break-point is found, find the first element that occurs in the array
+(going from right-to-left) that is greater than break-point 
+(so that difference between current and next permutation is minimized).
+Swap the break-point with this number.
+
+Finally, reverse the array after break-point's index to get the next permutation.
+Essentially, we are sorting the array (due to the ascending order of their occurance)
+in a better time complexity.

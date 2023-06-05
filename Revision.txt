@@ -40,3 +40,8 @@ we will be able to compute when a platform will be occupied.
 To find out the minimum number of platforms required, we can keep two variables, 
 'platformsOccupied' and 'platformsRequired', which will store the number of platforms
 currently occupied and the maximum value of the former at any given time respectively.
+
+Now, we will traverse through the array(s). Every time the current value of arrival
+time is less than (or equal to) the current value of departure time, the train will
+occupy a new platform and every time the arrival time is greater than the departure
+time, we can free up a platform.

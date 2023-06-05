@@ -4,6 +4,3 @@ Divide the array into three parts such that after traversal,
 all integers left of 'low' are equal to 0, 
 all integers right of 'high' are equal to 2
 and all integers between the two are equal to 1.
-
-
-

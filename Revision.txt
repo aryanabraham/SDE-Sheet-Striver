@@ -45,3 +45,6 @@ Now, we will traverse through the array(s). Every time the current value of arri
 time is less than (or equal to) the current value of departure time, the train will
 occupy a new platform and every time the arrival time is greater than the departure
 time, we can free up a platform.
+
+NOTE: We are not concerned with matching the arrival time of a train to its departure
+time as we need ONLY the number of platforms required.

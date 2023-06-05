@@ -30,3 +30,13 @@ Swap the break-point with this number.
 Finally, reverse the array after break-point's index to get the next permutation.
 Essentially, we are sorting the array (due to the ascending order of their occurance)
 in a better time complexity.
+
+<<Minimum Number of Platforms>>
+
+We know that at any given moment, one platform can accomodate at max one train only.
+Therefore, if we were to sort the arrival and departure times of trains individually, 
+we will be able to compute when a platform will be occupied.
+
+To find out the minimum number of platforms required, we can keep two variables, 
+'platformsOccupied' and 'platformsRequired', which will store the number of platforms
+currently occupied and the maximum value of the former at any given time respectively.

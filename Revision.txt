@@ -4,3 +4,12 @@ Divide the array into three parts such that after traversal,
 all integers left of 'low' are equal to 0, 
 all integers right of 'high' are equal to 2
 and all integers between the two are equal to 1.
+
+<<Kadane's Algorithm>>
+
+Iterate through the array whilst maintaining two variables,
+'currSum' and 'maxSum' that store the current and maximum sum
+of the array respectively.
+
+If currSum ever becomes less than 0, re-initialize it to 0 
+as the sum of an empty sub-array is taken to be 0.

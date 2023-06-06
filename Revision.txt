@@ -57,3 +57,20 @@ We can use two pointers, namely 'prevNode' and 'nextNode' and initialize them bo
 Re-arrange the links of the list such that prevNode and nextNode point to the 
 previous and next node of the current node respectively. Repeat this process till current 
 node is not equal to NULL. Return prevNode as head of new linked list.
+
+<<Job Sequencing Problem>>
+TC: O(NlogN) + O(N*k) | SC: O(k)
+
+Since we want to maximize our profits, we will sort the given array in descending order of
+the profits that they will yield. Afterwards, we will try to maximize our profits by performing
+every job on its last day so as to accomodate as many jobs as possible. 
+
+First, we will declare a boolean array 'jobSchedule' of size equal to the job that has the largest deadline
+and initialize each of its value to false. The size is taken such because the job with the 
+largest deadline is the amount of time we have to select jobs and maximize our profit.
+
+Now, we will iterate through the jobs array and populare our jobSchedule array with it.
+Since it is desirable to finish each job at its last possible day, we will start by checking
+whether that day is vacant (false) or not. If yes, we will set to do that job on its last day.
+If not, we will iterate through jobSchedule array in reverse till we find a vacant day for it.
+Upon finding it, we will add its profit to 'maxProfit' and continue doing so for the rest of the jobs.

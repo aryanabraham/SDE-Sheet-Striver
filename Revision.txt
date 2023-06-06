@@ -32,6 +32,7 @@ Essentially, we are sorting the array (due to the ascending order of their occur
 in a better time complexity.
 
 <<Minimum Number of Platforms>>
+TC: O(NlogN) | SC: O(1)
 
 We know that at any given moment, one platform can accomodate at max one train only.
 Therefore, if we were to sort the arrival and departure times of trains individually, 

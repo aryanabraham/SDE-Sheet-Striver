@@ -49,3 +49,11 @@ time, we can free up a platform.
 
 NOTE: We are not concerned with matching the arrival time of a train to its departure
 time as we need ONLY the number of platforms required.
+
+<<Reverse Linked List>>
+TC: O(N) | SC: O(1)
+
+We can use two pointers, namely 'prevNode' and 'nextNode' and initialize them both to NULL. 
+Re-arrange the links of the list such that prevNode and nextNode point to the 
+previous and next node of the current node respectively. Repeat this process till current 
+node is not equal to NULL. Return prevNode as head of new linked list.

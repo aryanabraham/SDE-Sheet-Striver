@@ -74,3 +74,12 @@ Since it is desirable to finish each job at its last possible day, we will start
 whether that day is vacant (false) or not. If yes, we will set to do that job on its last day.
 If not, we will iterate through jobSchedule array in reverse till we find a vacant day for it.
 Upon finding it, we will add its profit to 'maxProfit' and continue doing so for the rest of the jobs.
+
+<<Middle of Linked List>>
+TC: O(N) | SC: O(1)
+
+We will use the slow-fast pointer approach in this problem, where the 'slow' pointer will be incremented
+by one node per iteration and the 'fast' pointer will be incremented by two nodes per iteration. We will 
+continue this process till fast and the next node pointed by fast are not equal to NULL. When either of
+these conditions fail, the slow pointer will point to the middle of the linked list, irrespective of the
+number of nodes in the linked list.

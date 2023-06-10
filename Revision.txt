@@ -99,3 +99,26 @@ If this was the case, we would need to use dynamic programming.
 Eg. denominations = [1, 5, 6, 9], amount = 11
     Greedy Answer = 3 (9 + 1 + 1) [WRONG]
     DP Answer = 2 (6 + 5) [CORRECT]
+
+<<Reverse Words In A String>>
+TC: O(N) | SC: O(1)
+
+If we want to achieve constant space complexity whilst maintaining linear time complexity,
+we will have to make changes in the given string to do so.
+
+Declare two pointers 'i' and 'j' and initialize them to the length of the string.
+They shall indicate the end of the original string and the last letter of a word respectively.
+Append a space at the end of the original string to earmark the beginning of the desired string.
+
+Decrement j till the first space character is encountered. Declare a new variable 'k', 
+and initialize it the value one less than the index of j.
+
+Now, decrement k till the first space is encountered. The characters between j and k form the word
+that is to be appended at the end of the given string.
+
+Append the word to the end of the string along with a space and repeat this process till j is in range.
+
+Return the substring between i and the end of the string.
+
+
+

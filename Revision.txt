@@ -120,5 +120,16 @@ Append the word to the end of the string along with a space and repeat this proc
 
 Return the substring between i and the end of the string.
 
+<<Fractional Knapsack>>
+TC: O(NlogN) | SC: O(1)
 
+We want to maximize the amount in our knapsack. To do so, we will choose items with the 
+highest value per weight. Sort the given array in descending order of their value per weight.
 
+Now, traverse the array and choose items to put in the knapsack. If the total weight of an item is
+less than or equal to the amount of space left in the knapsack, choose that item in its entirety.
+
+Else, determine the value per weight of that item and choose its weight equivalent to the space left 
+in the knapsack.
+
+NOTE: Keep check of explicit type conversion while determining the unit values.

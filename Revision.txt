@@ -144,3 +144,19 @@ make all elements of the row and column 0.
 
 In order to keep track whether all elements of the zeroth column are to be made 0, we can declare a boolean
 variable 'colZero' that keeps track of the same. 
+
+<<Maximum Meetings>> AND <<Maximum Activities>>
+
+Since we need to choose the maximum number of meetings to be held in a room, we need to select those meetings 
+that finish the earliest i.e. have shortest end time. Therefore, we need to combine the start and end times of the meetings 
+into a single array and sort them by their end times. 
+
+Now, we will iterate through said combined array whilst maintaining a variable 'lastMeetingEndTime' that as its name indicates, 
+will store the ending time of the last meeting we select. Another variable 'meetingsOrganized' will keep track of the number
+of meetings will be able to organize.
+
+NOTE: Initialize meetingsOrganized as 1 since we will be able to organize at least 1 meeting
+
+If the starting time of the current meeting is strictly greater than lastMeetingEndTime, we will be able to organize this meeting.
+Increment meetingsOrganized accordingly and assign to lastMeetingEndTime the ending time of the current meeting and move to the 
+next meeting.

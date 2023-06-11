@@ -133,3 +133,14 @@ Else, determine the value per weight of that item and choose its weight equivale
 in the knapsack.
 
 NOTE: Keep check of explicit type conversion while determining the unit values.
+
+<<Set Matrix Zeros>>
+TC: O(N*M) | SC: O(1)
+
+If an element matrix[i][j] is equal to zero, we need to make all elements of the ith row and the jth 
+column equal to zero. Thus, if this condition is found to be true, we can make the zeroth element of the
+ith row and jth column equal to 0 during our first traversal of the matrix and later, in our second traversal,
+make all elements of the row and column 0.
+
+In order to keep track whether all elements of the zeroth column are to be made 0, we can declare a boolean
+variable 'colZero' that keeps track of the same. 

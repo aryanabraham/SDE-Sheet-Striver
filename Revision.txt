@@ -171,3 +171,10 @@ either selecting the current element and adding it to the subset, or not selecti
 
 This process is to be continued till the current index is equal to the size of the array, after which we have to return to 
 the calling function. Once all subsets have been generated, we need to sort them since that is the requirement of the problem.
+
+<<Inorder Traversal>> AND <<Preorder Traversal>> AND <<Postorder Traversal>>
+TC: O(N) | SC: O(N) [worst case: skew trees]
+
+Preorder: Node Left Right
+Inorder: Left Node Right
+Postorder: Left Right Node

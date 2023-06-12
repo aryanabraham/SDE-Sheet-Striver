@@ -179,5 +179,18 @@ Preorder: Node Left Right
 Inorder: Left Node Right
 Postorder: Left Right Node
 
-<<Morris Traversal>>
-TC: O(N) | SC: O(1) [using threaded binary tree]
+<<Morris Inorder Traversal>>
+TC: O(N) | SC: O(1)
+
+If left of curr exists, point the right-most node of the left sub-tree of curr to itself and then move curr to its left.
+Else, print curr and move curr to its right.
+
+// pointing right-most node of left sub-tree of curr to itself
+
+Initialize a TreeNode 'prev' as left of curr and continue moving it to its right till its right in not NULL and 
+not equal to curr itself.
+
+If right of prev is equal to curr, it means that a thread already exists. Remove it by pointing right of prev to NULL, 
+print curr and move it to its right.
+
+Else, point right of prev to curr and move curr to its left.

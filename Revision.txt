@@ -146,6 +146,7 @@ In order to keep track whether all elements of the zeroth column are to be made 
 variable 'colZero' that keeps track of the same. 
 
 <<Maximum Meetings>> AND <<Maximum Activities>>
+TC: O(NlogN) | SC: O(N)
 
 Since we need to choose the maximum number of meetings to be held in a room, we need to select those meetings 
 that finish the earliest i.e. have shortest end time. Therefore, we need to combine the start and end times of the meetings 
@@ -160,3 +161,13 @@ NOTE: Initialize meetingsOrganized as 1 since we will be able to organize at lea
 If the starting time of the current meeting is strictly greater than lastMeetingEndTime, we will be able to organize this meeting.
 Increment meetingsOrganized accordingly and assign to lastMeetingEndTime the ending time of the current meeting and move to the 
 next meeting.
+
+<<Subset Sum>>
+TC: O(2^NlogN) | SC: ??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
+To find out the sum of each subarray, we first need to recursively generate them. For this, we can create a function 
+'generateSubset' that will iterate through each element of the array and be recursively called for each of its two sub-cases: 
+either selecting the current element and adding it to the subset, or not selecting it.
+
+This process is to be continued till the current index is equal to the size of the array, after which we have to return to 
+the calling function. Once all subsets have been generated, we need to sort them since that is the requirement of the problem.

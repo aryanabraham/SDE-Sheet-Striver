@@ -220,3 +220,9 @@ it is empty.
 
 Finally, we can push all the second values of the map (containing node data) into a solution vector to get 
 the bottom view nodes of the given tree.
+
+<<Top View of Binary Tree>>
+TC: O(NlogN) | SC: O(N) 
+
+Similar to 'Bottom View of Binary Tree'. Instead of over-writing node->val in map for a line, first check if 
+it exists in the map. If yes, do NOT over-write it. We need the first value of each line. Else, insert it.

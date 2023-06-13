@@ -194,3 +194,9 @@ If right of prev is equal to curr, it means that a thread already exists. Remove
 print curr and move it to its right.
 
 Else, point right of prev to curr and move curr to its left.
+
+<<Left View of Binary Tree>>
+
+Through observation, we find out that the left view of a binary tree contains all the first nodes of each level.
+Therefore, we use preorder traversal on it and whenever the level of the binary tree is equal to the array used to 
+store the left view nodes, we push it back into our solution.

@@ -196,7 +196,27 @@ print curr and move it to its right.
 Else, point right of prev to curr and move curr to its left.
 
 <<Left View of Binary Tree>>
+TC: O(N) | SC: O(H)
 
 Through observation, we find out that the left view of a binary tree contains all the first nodes of each level.
 Therefore, we use preorder traversal on it and whenever the level of the binary tree is equal to the array used to 
 store the left view nodes, we push it back into our solution.
+
+<<Bottom View of Binary Tree>>
+TC: O(NlogN) | SC: O(N)
+
+We can think of the binary tree as a group of lines, with the root being line 0, and every child to the left or 
+right of a node as one line lesser or greater than it respectively.
+
+In doing so, we can store all nodes (starting from the root) in a queue that contains a vector of pairs of 
+a node and its line. We would also require a map to store the unique node corresponding to each line.
+
+With the root and its line (i.e. 0) pushed into the queue, we will assign its line to its node in the map. 
+If its children exist in the tree, we shall push them into the queue as well, with their line incremented or 
+decremented by 1 if they are the left or right child respectively.
+
+Since we are done processing the current element of the queue, we can pop it out and repeat this process till 
+it is empty.
+
+Finally, we can push all the second values of the map (containing node data) into a solution vector to get 
+the bottom view nodes of the given tree.

@@ -18,16 +18,18 @@ vector<vector<int>> mergeIntervals(vector<vector<int>> &intervals)
 
     sort(intervals.begin(), intervals.end(), sortByStart);
 
-    for(int i = 0; i < numberOfIntervals; i++){
+    while(i < numberOfIntervals){
+        int j = (i + 1);
         int startTime = intervals[i][0];
         int endTime = intervals[i][1];
 
-        while((i < numberOfIntervals) && (endTime >= intervals[i][0])){
-            endTime = max(endTime, intervals[i][1]);
-            i++;
+        while((j < numberOfIntervals) && (endTime >= intervals[j][0])){
+            endTime = max(endTime, intervals[j][1]);
+            j++;
         }
+
         mergedIntervals.push_back({startTime, endTime});
-        i--;
+        i = j;
     }
     return mergedIntervals;
 }

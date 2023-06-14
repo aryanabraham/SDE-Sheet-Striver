@@ -238,3 +238,17 @@ If a major element exists in the array, it is equal to majEle. Else, no major el
 
 Iterate through the array again, and count the number of times majEle occurs in it. If its frequency is greater than n/2,
 return majEle. Else, return -1.
+
+<<Largest Subarray with K Sum>>
+TC: O(N^2) | SC: O(N)
+
+Declare two variables 'maxLen' and 'preSum' and initialize them both to zero. These shall store the maximum length of 
+subarray with sum equal to zero and the prefix sum upto the current index respectively.
+
+Declare an unordered map 'preSumIdx' that shall store the earliest index of a specific prefix sum. Insert (0, -1) into 
+the map as the prefix sum 0 is achieved at the -1th index.
+
+Iterate through the array and add the element to preSum. If the preSum already exists in the array, find the distance between 
+the current index and the index this preSum occured at first. Assign to maxLen the maximum value between the two.
+
+If the preSum does not exist in the array, insert it. Finally, return maxLen.

@@ -252,3 +252,12 @@ Iterate through the array and add the element to preSum. If the preSum already e
 the current index and the index this preSum occured at first. Assign to maxLen the maximum value between the two.
 
 If the preSum does not exist in the array, insert it. Finally, return maxLen.
+
+<<Merge Intervals>>
+TC: O(NlogN) | SC: O(1)
+
+If two intervals are overlapping, the new interval will start from the starting time of the first interval 
+and end at the ending time of the maximum end time of the two intervals.
+
+This approach can be generalised for n intervals: If n intervals are overlapping, the resultant interval 
+will start at the starting time of the first interval and end at the ending time of the maximum end time of the n intervals.

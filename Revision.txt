@@ -226,3 +226,15 @@ TC: O(NlogN) | SC: O(N)
 
 Similar to 'Bottom View of Binary Tree'. Instead of over-writing node->val in map for a line, first check if 
 it exists in the map. If yes, do NOT over-write it. We need the first value of each line. Else, insert it.
+
+<<Majority Element (>n÷2 times)>>
+TC: O(N) | SC: O(1)
+
+Initialize and declare two variable 'majEle' and 'ctr' to the 0th element of the array and 1 respectively.
+Iterate through the given array (starting from the first element) and whenever the ith element is equal to majEle, 
+increment ctr. Else, decrement it. If ctr is ever equal to 0, re-initialize it 1 and assign the current element as majEle.
+
+If a major element exists in the array, it is equal to majEle. Else, no major element exists in the array.
+
+Iterate through the array again, and count the number of times majEle occurs in it. If its frequency is greater than n/2,
+return majEle. Else, return -1.

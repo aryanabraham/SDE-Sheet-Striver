@@ -261,3 +261,13 @@ and end at the ending time of the maximum end time of the two intervals.
 
 This approach can be generalised for n intervals: If n intervals are overlapping, the resultant interval 
 will start at the starting time of the first interval and end at the ending time of the maximum end time of the n intervals.
+
+<<Count Inversions>>
+TC: O(NlogN) | SC: O(N)
+
+If there exist two sorted arrays 'a' and 'b' andsuch that the ith element of a is greater than the jth element of b, 
+then all the elements to the right of a will surely be greater b[j].
+
+We can find this situation in merge sort when we are merging two sorted arrays to form the final array. While we are 
+at this step, we can keep track of the inversions using a variable that is incremented by the difference between 
+n1 (the size of array a) and i (current index of a) whenever a[i] > b[j].

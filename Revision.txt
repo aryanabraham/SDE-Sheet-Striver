@@ -282,3 +282,20 @@ Take sum of square of all elements in array. Deduce sum of squares of all intege
 Subtract the two values. Divide it by (R-M). This should be equal to (R+M).
 
 Solve the two equations to deduce the values of R and M respectively.
+
+<<Merge Two Sorted Arrays>>
+TC: O(N+M) | SC: O(1)
+
+Declare and initialize 3 pointers i, j and k to the last non-zero integer in arr1, last integer in arr2 and 
+last intger in arr1 respectively.
+
+While i and j both are greater than -1, compare the ith and jth element of arr1 and arr2 respectively.
+
+If arr1[i] is greater than arr2[j], assign the value at arr1[i] to arr1[k] and decrement both the pointers.
+Else, assign the value at arr2[j] to arr1[k] and decrement both the pointers.
+
+When the loop is exited, one of the two conditions is still true. Thus, we will populate the array with 
+the remaning elements.
+
+Iterate through arr1 and assign the value at arr1[i] to arr1[k] and decrement both the pointers.
+Repeat the process for arr2 as well.

@@ -271,3 +271,14 @@ then all the elements to the right of a will surely be greater b[j].
 We can find this situation in merge sort when we are merging two sorted arrays to form the final array. While we are 
 at this step, we can keep track of the inversions using a variable that is incremented by the difference between 
 n1 (the size of array a) and i (current index of a) whenever a[i] > b[j].
+
+<<Missing and Repeating Number>>
+TC: O(N) | SC: O(1)
+
+Take sum of all elements in the array. Deduce sum of all integers from 1 to n using formula. Subtract the two values.
+This should be equal to (R-M).
+
+Take sum of square of all elements in array. Deduce sum of squares of all integers from 1 to n using formula. 
+Subtract the two values. Divide it by (R-M). This should be equal to (R+M).
+
+Solve the two equations to deduce the values of R and M respectively.

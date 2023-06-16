@@ -299,3 +299,38 @@ the remaning elements.
 
 Iterate through arr1 and assign the value at arr1[i] to arr1[k] and decrement both the pointers.
 Repeat the process for arr2 as well.
+
+<<Find Duplicate in Array>>
+TC: O(N) | SC: O(1)
+
+<<Cycle Detection in a Singly Linked List>>
+TC: O(N) | SC: O(1)
+
+If head or the node next to head is NULL, we can be sure that no cycle exists in the linked list.
+Declare two pointers 'slow' and 'fast' and make them point to the head of the linked list. While fast and the 
+node after  fast are not NULL, move slow to its next and fast to the next of its next node respectively. 
+If at any point slow and fast are equal to each other, we can say that a cycle exists in the linked list.
+
+<<Linked List Cycle II>>
+TC: O(N) | SC: O(1)
+
+
+<<Preorder, Inorder, Postorder in Single Traversal>>
+
+if(num == 1){
+assign to preorder
+increment num
+go left // since pre: NLR
+}
+
+else if (num == 2){
+assign to inorder
+increment num
+go right // since in: LNR
+}
+
+else{
+assign to postorder
+}
+
+NOTE: When going left/right, keep num as 1

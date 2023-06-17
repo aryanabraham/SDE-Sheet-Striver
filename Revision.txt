@@ -321,9 +321,31 @@ Declare two pointers 'slow' and 'fast' and make them point to the head of the li
 node after  fast are not NULL, move slow to its next and fast to the next of its next node respectively. 
 If at any point slow and fast are equal to each other, we can say that a cycle exists in the linked list.
 
+INTUITION: In a circular linked list, if fast is one node behind slow, then in the next iteration, 
+they will point to the same node. If fast is two nodes behind slow, the next iteration will reduce the gap 
+to one node and the one after that will make them point to the same node.
+
 <<Linked List Cycle II>>
 TC: O(N) | SC: O(1)
 
+Let l1 be the distance from head to starting of loop and l2 be the distance from starting of loop to first 
+node where s and f collide.
+
+Therefore, s travels l1+l2 distance before first collision. Since s and f are colliding, 
+f would've also covered at least l1+l2. However, since f moves twice as fast as s, 
+it would've made a couple of laps of the loop before meeting s at point of collision.
+
+Therefore, total distance travelled by f would be l1+l2+nC where n is the number of laps travelled 
+before meeting s and C is the length of the loop.
+
+Since travels twice as fast as s, for the same number of iterations, f would cover twice the distance as s.
+
+i.e. 2(l1+l2) = l1+l2+nC
+=> nC = l1+l2
+=> l1 = nC-l2
+
+And since l1 is the distance from head to entry of loop, the time taken to go from head to entry would be the same
+as the time taken to go from point of collision to entry.
 
 <<Preorder, Inorder, Postorder in Single Traversal>>
 TC:O(N) | SC: O(N)

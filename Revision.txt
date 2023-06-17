@@ -316,21 +316,20 @@ TC: O(N) | SC: O(1)
 
 
 <<Preorder, Inorder, Postorder in Single Traversal>>
+TC:O(N) | SC: O(N)
 
-if(num == 1){
-assign to preorder
-increment num
-go left // since pre: NLR
-}
+Declare three vectors 'inNodes', 'preNodes' and 'postNodes' that will store the nodes of the binary tree when traversed in
+inorder, preorder and postorder respectively.
 
-else if (num == 2){
-assign to inorder
-increment num
-go right // since in: LNR
-}
+Declare a stack that stores pairs of TreeNodes and integers. This shall be used to store the node and its 'stage'.
+Push onto root node and 1 onto the stack.
 
-else{
-assign to postorder
-}
+First assign the node and stage to suitable variables and pop off the top node of the stack.  
 
-NOTE: When going left/right, keep num as 1
+If the stage of the current node is 1, insert its value into preNodes and push onto the stack the same node, but with 
+its stage incremented by 1. If its left child exists, push the child onto the stack with its stage as 1.
+
+Else, if the stage of the current node is 2, insert its value into inNodes and push onto the stack the same node, but with 
+its stage incremented by 1. If its right child exists, push the child onto the stack with its stage as 1.
+
+For all other cases, insert the node's value into the stack as it is.

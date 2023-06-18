@@ -300,19 +300,6 @@ the remaning elements.
 Iterate through arr1 and assign the value at arr1[i] to arr1[k] and decrement both the pointers.
 Repeat the process for arr2 as well.
 
-<<Find Duplicate in Array>>
-TC: O(N) | SC: O(1)
-
-For this question, we will use the 'Linked List Cycle Method', since there exists one element with duplicate(s).
-
-Declare two integer variabls 'slow' and 'fast' and initialize them to the zeroth index of the array. 
-While they are not equal to each other, assign to slow the value at the slow'th index of the array and 
-to fast, the value at the fast'th index of the fast'th index of the array. 
-
-When the loop is exited, assign to fast the value at the zeroth index of the array. 
-While slow and fast are not equal, assign to slow the value at the slow'th index of the array and to fast, 
-the value at the fast'th index. Return slow.
-
 <<Cycle Detection in a Singly Linked List>>
 TC: O(N) | SC: O(1)
 
@@ -346,6 +333,35 @@ i.e. 2(l1+l2) = l1+l2+nC
 
 And since l1 is the distance from head to entry of loop, the time taken to go from head to entry would be the same
 as the time taken to go from point of collision to entry.
+
+
+<<Find Duplicate in Array>>
+TC: O(N) | SC: O(1)
+
+For this question, we will use the 'Linked List Cycle Method', since there exists one element with duplicate(s).
+
+Declare two integer variabls 'slow' and 'fast' and initialize them to the zeroth index of the array. 
+While they are not equal to each other, assign to slow the value at the slow'th index of the array and 
+to fast, the value at the fast'th index of the fast'th index of the array. 
+
+When the loop is exited, assign to fast the value at the zeroth index of the array. 
+While slow and fast are not equal, assign to slow the value at the slow'th index of the array and to fast, 
+the value at the fast'th index. Return slow.
+
+<<Intersection of Two Linked Lists>>
+TC: O(M+N) | SC: O(1)
+
+Declare two node pointers 'ptr1' and 'ptr2' and initialize them to the heads of the given linked lists respectively. 
+Till they both point to the same nodes, move them to their respective next nodes. When ptr1 becomes NULL, 
+move it to the head of the second linked list. Do the same for ptr2 too when it becomes NULL.
+
+The loop will be exited when both the pointers point to the same node. If the two linked lists intersect, this node 
+will be the intersecting node. If not, loop will be exited when both are NULL.
+
+INTUITION: When the node pointer of the shorter linked list reaches NULL, the number of nodes between the two node 
+pointers is equal to the difference of their lenghts. When we assign them to each others head upon reaching NULL, 
+we reset this difference. By the time the node of the longer linked list reaches NULL and is re-assigned to the head of
+the shorter linked list, the node pointers are aligned to meet at the intersecting node.
 
 <<Preorder, Inorder, Postorder in Single Traversal>>
 TC:O(N) | SC: O(N)

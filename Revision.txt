@@ -398,8 +398,13 @@ Repeat the process till the queue is not empty. Finally, push all the elements o
 <<Path in a Tree>>
 TC: O(N) | SC: O(H)
 
-We will traverse the given binary tree using inorder traversal. If current node is not NULL, we will insert its value in our 'path' array.
-If current node is equal to the desired node, we will return true. Else, we will continue our search in its left and right child. 
+We will traverse the given binary tree recursively using inorder traversal.
 
-If either of the children possess the desired node, we will return true. Else, we will pop out the last element from our array and 
-return false.
+First, check if current node is NULL; if yes, return false. 
+Add node's data to path array.
+
+Now, check if current node is equal to desired node; if yes, return true.
+Repeat the process for children of current node (first left, then right).
+If either of them return true, return true.
+
+Pop last value from array and return false. 

@@ -407,3 +407,22 @@ Repeat the process for children of current node (first left, then right).
 If either of them return true, return true.
 
 Pop last value from array and return false. 
+
+<<Majority Element (>n÷3 times)>>
+TC: O(N) | SC: O(1)
+
+Upon observation, we can conclude that an array can have AT MAX, only 2 majority elements.
+Using this observation, declare two variables 'majEle1' and 'majEle2' and initialize them to -1. 
+These shall hold the majority elements.
+
+Declare two more variables, 'ctr1' and 'ctr2' and initialize them to 0. They shall hold the 
+modified count of the majority elements.
+
+Iterate through the array, if current element is equal to majEle1 , increment ctr1. If current element is 
+equal to majEle2, increment ctr2. If ctr1 is equal to 0, assign current element to majEle1 and 1 to ctr1.
+If ctr2 is equal to 0, assign current element to majEle2 and 1 to ctr2. 
+
+If none of the above conditions are true, decrement both ctr1 and ctr2 by 1.
+
+Finally, iterate through the array again and if the frequency of the current majEle1 and majEle2 is greater 
+than (n/3), return them as the result.

@@ -163,7 +163,7 @@ Increment meetingsOrganized accordingly and assign to lastMeetingEndTime the end
 next meeting.
 
 <<Subset Sum>>
-TC: O(2^NlogN) | SC: ??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+TC: O(2^NlogN) | SC: O(2^N)
 
 To find out the sum of each subarray, we first need to recursively generate them. For this, we can create a function 
 'generateSubset' that will iterate through each element of the array and be recursively called for each of its two sub-cases: 
@@ -424,5 +424,17 @@ If ctr2 is equal to 0, assign current element to majEle2 and 1 to ctr2.
 
 If none of the above conditions are true, decrement both ctr1 and ctr2 by 1.
 
-Finally, iterate through the array again and if the frequency of the current majEle1 and majEle2 is greater 
-than (n/3), return them as the result.
+Finally, iterate through the array again, and if the frequency of the current majEle1 and majEle2 is greater 
+than (n/3), return them as a result.
+
+<<Subset-II>>
+TC: O(N*2^N) | SC: O(k*2^N) 
+
+Generate all possible subsets from size 0 to size n and move to the next index of the array last added to the subset.
+
+If the current element is being added to the subset for the first time, add it and move to the next index.
+Else, simply move the iterator till the next new element is found.
+
+Continue adding elements to the subarray till the iterator reaches out of the bound of the array.
+
+NOTE: Sort the input array before forming subsets from it. This will group all similar elements together.

@@ -438,3 +438,19 @@ Else, simply move the iterator till the next new element is found.
 Continue adding elements to the subarray till the iterator reaches out of the bound of the array.
 
 NOTE: Sort the input array before forming subsets from it. This will group all similar elements together.
+
+<<Reverse Pairs>>
+TC: O(NlogN) | SC: O(N)
+
+If we check upto which element of arr1 is the condition true (given arr1 and arr2 are sorted and their total number of elements is n),
+we can determine the number of reverse pairs in linear time complexity.
+
+Before we merge the two sorted arrays in merge sort, we can add a condition to check for reverse pairs. This will circumvent the problem 
+of checking the additional condition of i being greater than j.
+
+Initialize pointers 'i' and 'j' to 0. These will be used to iterate through sorted arrays arr1 and arr2 respectively. 
+While arr1[i] is greater than twice of arr2[j], increment j. Finally, when the breaking point is reached, add whichever index j is currently 
+on to 'revPairs'. 
+
+This logic works since arr1 is sorted, for a given index of arr1, all the elements that are lesser than a particular index of arr2 will 
+also be lesser than all the elements that occured before it in arr1, hence continuing from where the previous element of arr1 left.

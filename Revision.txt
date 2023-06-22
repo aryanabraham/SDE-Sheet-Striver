@@ -28,7 +28,7 @@ Once break-point is found, find the first element that occurs in the array
 Swap the break-point with this number.
 
 Finally, reverse the array after break-point's index to get the next permutation.
-Essentially, we are sorting the array (due to the ascending order of their occurance)
+Essentially, we are sorting the array (due to the ascending order of their occurrence)
 in a better time complexity.
 
 <<Minimum Number of Platforms>>

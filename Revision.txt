@@ -96,7 +96,7 @@ possible till the amount to be formed is zero.
 NOTE: The greedy approach works in this case as the sum of no two denominations is equal to a third one.
 If this was the case, we would need to use dynamic programming. 
 
-Eg. denominations = [1, 5, 6, 9], amount = 11
+Eg. denominations = [1, 5, 6, 9], amount = 11 
     Greedy Answer = 3 (9 + 1 + 1) [WRONG]
     DP Answer = 2 (6 + 5) [CORRECT]
 

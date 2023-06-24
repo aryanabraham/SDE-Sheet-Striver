@@ -473,3 +473,7 @@ If yes, we will push temp into sol and return. Else, we would simply return to t
 TC: O(N*2^N) | SC: O(k*2^N) 
 
 This problem uses the principle applied in 'Subsets II' and combines it with the one used in 'Combination Sum'.
+The only changes that are to be made are: 
+
+i. Accept the current subset as part of the solution only if current sum is equal to target value.
+ii. If target value is less than the current element of the array, return.

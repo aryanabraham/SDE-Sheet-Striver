@@ -477,3 +477,44 @@ The only changes that are to be made are:
 
 i. Accept the current subset as part of the solution only if current sum is equal to target value.
 ii. If target value is less than the current element of the array, return.
+
+<<Maximum Width in Binary Tree>>
+TC: O( | SC: O(
+
+The maximum width of a binary tree could be understood as the maximum number of nodes in a level.
+If we were to assign indices to each node in the tree (null or not), then the number of nodes on each level would be equal 
+to the difference of the first and the last node incremented by 1.
+
+If we were to do 0-based indexing, then the left and right child would be 2i+1 and 2i+2 respectively.
+However, in doing so, we risk an overflow in a left-skewed tree, since number of nodes can be 5*10^5.
+
+Hence, for a tree like: 
+
+        0
+     /     \
+   1         2 
+ /   \     /   \
+3     4   5     6
+
+we will re-index it as-
+
+        0
+     /     \
+   1         2 
+ /   \     /   \
+1     2   3     4
+
+i.e. every child will restart indexing from 1 for a new level.
+
+Therefore, to get the left child of a node, we will subtract the minimum index of a node at its level, 
+and add 1 to it. For the right child, we will do the same and add 2 to it. 
+
+i = i - min 
+    /  \
+2i+1   2i+2
+
+width = lastIdx - firstIdx + 1
+maxWidth = max(maxWidth, width)
+
+
+

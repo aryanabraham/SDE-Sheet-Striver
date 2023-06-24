@@ -453,4 +453,18 @@ While arr1[i] is greater than twice of arr2[j], increment j. Finally, when the b
 on to 'revPairs'. 
 
 This logic works since arr1 is sorted, for a given index of arr1, all the elements that are lesser than a particular index of arr2 will 
-also be lesser than all the elements that occured before it in arr1, hence continuing from where the previous element of arr1 left.
+also be lesser than all the elements that occurred before it in arr1, hence continuing from where the previous element of arr1 left.
+
+<<Combination Sum>>
+TC: O(k*2^N) | SC: O(k*x)
+
+Declare two arrays, a vector 'temp', and a vector of vectors 'sol'. These shall store the combination that we are currently trying and 
+all the possible solutions respectively.
+
+For every element we encounter in the array, we have the option of either adding them into temp and moving to the next index or 
+simply moving to the next index. In either case, we have to generate the sub-cases thus formed after moving to the next index.
+
+We shall continue doing this process till the current index is equal to the size of the array, upon which we will check 
+if the current sum is equal to the required sum. 
+
+If yes, we will push temp into sol and return. Else, we would simply return to the calling function.

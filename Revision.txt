@@ -525,3 +525,13 @@ first loop's iterator to the last index of the array.
 
 If at any point the sum of the elements pointed by the two iterators is equal to the required sum, push them into
 the solution array.
+
+<<Four Sum>>
+TC: O(N^2logN) | SC: O(1)
+
+Sort the given array in non-decreasing order. Place 'i' at 0 and 'j' at the index after i. Now, place 'k' at 
+the index after j and 'l' at the last index. We have successfully fixed 2 values (arr[i] and arr[j]) that will 
+form the sum and will now change the remaining two values to get our desired result.
+
+If the sum of all 4 values is less than target, increment k to a bigger value. Else, if the sum is less than target,
+decrement l to a smaller value. In all other cases, return 'yes'. If all iterations fail, return 'no'.

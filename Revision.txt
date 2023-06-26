@@ -516,5 +516,12 @@ i = i - min
 width = lastIdx - firstIdx + 1
 maxWidth = max(maxWidth, width)
 
+<<Two Sum>>
+TC: O(N^2) | SC: O(1)
 
+Sort the given array in non-decreasing order. Iterate through it using nested loops, with the first one 
+running from the 0th index to the last but one'th and the nested loop running from one after the index of the 
+first loop's iterator to the last index of the array.
 
+If at any point the sum of the elements pointed by the two iterators is equal to the required sum, push them into
+the solution array.

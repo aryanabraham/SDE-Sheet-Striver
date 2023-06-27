@@ -542,3 +542,20 @@ TC: O(N) | SC: O(2^h)
 If root in NULL, return an empty array.Else, declare a queue and insert into it the root of the tree. 
 Push the value of the node in front of the queue into an array. If it has children, push them into the queue as well.
 Pop the first element of the queue and repeat the process till it is empty.
+
+<<Height of a Binary Tree>>
+TC: O(N) | SC: O(N)
+
+For a binary tree with only one node, the height is 1. For a binary tree with only one node as the left child of 
+the root, the height is 2. For the given binary tree, the height is 3.
+  
+  1
+ / \
+2   3
+   /  
+  4
+
+Hence, we can observe that for a given node, its height is equal to 1 more than the maximum height of its left and 
+right sub-tree i.e. maxDepth = (1 + max(l, r)).
+
+To find the height of the left and right sub-tree, recursively traverse them and return 0 if node is NULL at any point.

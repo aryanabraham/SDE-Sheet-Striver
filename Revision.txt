@@ -559,3 +559,17 @@ Hence, we can observe that for a given node, its height is equal to 1 more than 
 right sub-tree i.e. maxDepth = (1 + max(l, r)).
 
 To find the height of the left and right sub-tree, recursively traverse them and return 0 if node is NULL at any point.
+
+<<Palindrome Linked List>>
+TC: O(N) | SC: O(1)
+
+If head or the node next of head is NULL, return true.
+
+Declare two pointers 'slow' and 'fast' and initialize them to the head of the linked list. While the next node of fast and 
+the next node of the next node of fast are not NULL, move slow to its next node and fast to the next node of its next node. 
+
+Now, reverse the linked list and return the last node pointed by 'prevNode' to the next node of slow. Move slow to its 
+next node and assign to fast the head of the linked list.
+
+Finally, while slow is not equal to NULL, compare each value of slow and fast. If at any point they are found not to be 
+equal, return false. Else, move them to their respective next nodes and once loop is exited, return true.

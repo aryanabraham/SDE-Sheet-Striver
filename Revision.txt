@@ -358,7 +358,7 @@ The loop will be exited when both the pointers point to the same node. If the tw
 will be the intersecting node. If not, loop will be exited when both are NULL.
 
 INTUITION: When the node pointer of the shorter linked list reaches NULL, the number of nodes between the two node 
-pointers is equal to the difference of their lenghts. When we assign them to each others head upon reaching NULL, 
+pointers is equal to the difference of their lengths. When we assign them to each others head upon reaching NULL, 
 we reset this difference. By the time the node of the longer linked list reaches NULL and is re-assigned to the head of
 the shorter linked list, the node pointers are aligned to meet at the intersecting node.
 

@@ -573,3 +573,18 @@ next node and assign to fast the head of the linked list.
 
 Finally, while slow is not equal to NULL, compare each value of slow and fast. If at any point they are found not to be 
 equal, return false. Else, move them to their respective next nodes and once loop is exited, return true.
+
+<<Search In Rotated Sorted Array>>
+TC: O(logN) | SC: O(1)
+
+Since the given array is sorted, we can think about applying binary search to it. Since it is also rotated, one of the 
+following two possibilities is true: 
+
+1. All elements between arr[low] and arr[mid] are sorted.
+2. All elements between arr[mid] and arr[high] are sorted.
+
+NOTE: Both the possibilities will be simultaneously true only if the sorted array is not rotated.
+
+Therefore, we will first check which of the above conditions is true. Henceforth, we will check if the key falls 
+in the range of the half of the array fulfilling this condition. If it doesn't we will check in the other half of 
+the array. We will continue doing so till low is less than or equal to high. If all else fails, we will return -1.

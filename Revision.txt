@@ -265,7 +265,7 @@ will start at the starting time of the first interval and end at the ending time
 <<Count Inversions>>
 TC: O(NlogN) | SC: O(N)
 
-If there exist two sorted arrays 'a' and 'b' andsuch that the ith element of a is greater than the jth element of b, 
+If there exist two sorted arrays 'a' and 'b' such that the ith element of a is greater than the jth element of b, 
 then all the elements to the right of a will surely be greater b[j].
 
 We can find this situation in merge sort when we are merging two sorted arrays to form the final array. While we are 

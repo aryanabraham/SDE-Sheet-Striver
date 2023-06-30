@@ -479,42 +479,16 @@ i. Accept the current subset as part of the solution only if current sum is equa
 ii. If target value is less than the current element of the array, return.
 
 <<Maximum Width in Binary Tree>>
-TC: O( | SC: O(
+TC: O(N) | SC: O(logN)
 
-The maximum width of a binary tree could be understood as the maximum number of nodes in a level.
-If we were to assign indices to each node in the tree (null or not), then the number of nodes on each level would be equal 
-to the difference of the first and the last node incremented by 1.
+The width of a binary tree is defined as the number of non-null nodes present at that level. Hence, if we are 
+able to compute the number of nodes at a given level and compare it with the maximum amount of nodes at any given 
+level, we shal obtain the maximum width of a binary tree.
 
-If we were to do 0-based indexing, then the left and right child would be 2i+1 and 2i+2 respectively.
-However, in doing so, we risk an overflow in a left-skewed tree, since number of nodes can be 5*10^5.
-
-Hence, for a tree like: 
-
-        0
-     /     \
-   1         2 
- /   \     /   \
-3     4   5     6
-
-we will re-index it as-
-
-        0
-     /     \
-   1         2 
- /   \     /   \
-1     2   3     4
-
-i.e. every child will restart indexing from 1 for a new level.
-
-Therefore, to get the left child of a node, we will subtract the minimum index of a node at its level, 
-and add 1 to it. For the right child, we will do the same and add 2 to it. 
-
-i = i - min 
-    /  \
-2i+1   2i+2
-
-width = lastIdx - firstIdx + 1
-maxWidth = max(maxWidth, width)
+Declare a queue 'q' that shall contain the nodes present at a given level. Insert into it the root of the binary tree. 
+Assign to 'maxWidth' the maximum value between itself and the size of the queue. If the node at the front of the queue 
+has a left child, insert it into the node. Do the same for the right child and then pop the node from the queue. Iterate 
+this process for the size of the queue. Continue this process till the queue is empty.
 
 <<Two Sum>>
 TC: O(N^2) | SC: O(1)

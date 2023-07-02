@@ -562,3 +562,10 @@ NOTE: Both the possibilities will be simultaneously true only if the sorted arra
 Therefore, we will first check which of the above conditions is true. Henceforth, we will check if the key falls 
 in the range of the half of the array fulfilling this condition. If it doesn't we will check in the other half of 
 the array. We will continue doing so till low is less than or equal to high. If all else fails, we will return -1.
+
+<<Longest Consecutive Sequence>>
+TC: O(N) | SC: O(N)
+
+Store all the elements in an unordered set. Iterate through the array. Search for the predecessor of the current 
+element in the set. If it does not exist, start searching for its successors till no more can be found whilst keeping 
+track of the number of successors found.

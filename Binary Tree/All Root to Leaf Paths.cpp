@@ -26,11 +26,11 @@ void getPath(BinaryTreeNode<int> *root, string str, vector<string> &paths){
         return;
     }
 
-    if(root->left){
+    if(root->left != NULL){
         getPath(root->left, str, paths);
     }
     
-    if(root->right){
+    if(root->right != NULL){
         getPath(root->right, str, paths);
     }
 }

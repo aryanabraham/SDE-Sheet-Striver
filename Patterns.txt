@@ -2,3 +2,4 @@ Input Sorted: BINARY SEARCH
 Max of Min / Min of Max: BINARY SEARCH
 Generate all ways: RECURSION
 Counting: HASHING
+Dimensions of binary tree: STACK/QUEUE (run till empty)

@@ -569,3 +569,10 @@ TC: O(N) | SC: O(N)
 Store all the elements in an unordered set. Iterate through the array. Search for the predecessor of the current 
 element in the set. If it does not exist, start searching for its successors till no more can be found whilst keeping 
 track of the number of successors found.
+
+<<All Root to Leaf Paths>>
+TC: O(N) | SC: O(H)
+
+The condition for a leaf node is that both its left and right children are simultaneously equal to NULL.
+Therefore, we will initialize and empty string and keep push node data into it till this condition is met.
+Upon meeting the pre-requisite, we will push the string into an array and return.

@@ -594,3 +594,16 @@ Using this knowledge, we can declare a variable 'maxHeight' which will be passed
 recursive calls. Initialized as 0, maxHeight will be defined as the maximum of itself and the sum of the 
 left and right sub-tree. Finally, we would return the height of the tree upto the current node i.e. 
 maximum of left and right sub-tree of that node incremented by 1.
+
+<<Is Height Balanced Binary Tree>>
+TC: O(_) | SC: O(_)
+
+If given tree is balanced, return its height. Else, return -1.
+
+In the function where we try to find the height of the binary tree in O(N) time, we will add some more functionalities 
+to get to the final answer. If absolute value of difference of left and right height is greater than 1, 
+we can surely say that tree is not balanced. Similarly, if either of the two heights is equal to -1, we can say that 
+tree is not balanced. We shall return -1 in both the cases. For all other cases, we will return the height of the tree.
+
+NOTE: If left sub-tree of any node is equal to NULL, we do not need to check the right node. Hence, we declare a sub-tree 
+as unbalanced even if only the leftHeight of a sub-tree is -1.

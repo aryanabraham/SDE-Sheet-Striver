@@ -513,7 +513,7 @@ decrement l to a smaller value. In all other cases, return 'yes'. If all iterati
 <<Level Order Traversal>>
 TC: O(N) | SC: O(2^h)
 
-If root in NULL, return an empty array.Else, declare a queue and insert into it the root of the tree. 
+If root in NULL, return an empty array. Else, declare a queue and insert into it the root of the tree. 
 Push the value of the node in front of the queue into an array. If it has children, push them into the queue as well.
 Pop the first element of the queue and repeat the process till it is empty.
 

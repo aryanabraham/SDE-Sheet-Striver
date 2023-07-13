@@ -587,6 +587,10 @@ insert the elements of the temporary array as it is. Repeat the process till the
 <<Diameter of Binary Tree>>
 TC: O(N) | SC: O(N)
 
-For a given node, if we are able to find the maximum height out of its left and right sub-tree, we can 
-return it after incrementing it by 1.
+The diameter for a given node can be expressed as the sum of its left and right height. We know that the height 
+of a tree is the maximum its left and right sub-tree incremented by 1.
 
+Using this knowledge, we can declare a variable 'maxHeight' which will be passed by reference in the function's 
+recursive calls. Initialized as 0, maxHeight will be defined as the maximum of itself and the sum of the 
+left and right sub-tree. Finally, we would return the height of the tree upto the current node i.e. 
+maximum of left and right sub-tree of that node incremented by 1.

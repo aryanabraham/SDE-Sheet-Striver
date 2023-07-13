@@ -583,3 +583,10 @@ TC: O(N) | SC: O(H)
 We will store all the nodes at a given level in a queue as well as a temporary array and keep track of its orientation 
 using a flag; if it is true, reverse the temporary array before inserting the elements into the solution array. If not, 
 insert the elements of the temporary array as it is. Repeat the process till the queue is empty.
+
+<<Diameter of Binary Tree>>
+TC: O(N) | SC: O(N)
+
+For a given node, if we are able to find the maximum height out of its left and right sub-tree, we can 
+return it after incrementing it by 1.
+

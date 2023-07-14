@@ -1,33 +1,66 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
-public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(root == NULL || root == p || root == q){
-            return root;
+#include <bits/stdc++.h> 
+
+/************************************************************
+
+ 
+
+    Following is the TreeNode class structure
+
+ 
+
+    template <typename T>
+
+    class TreeNode {
+
+       public:
+
+        T data;
+
+        TreeNode<T> *left;
+
+        TreeNode<T> *right;
+
+ 
+
+        TreeNode(T data) {
+
+            this->data = data;
+
+            left = NULL;
+
+            right = NULL;
+
         }
 
-        TreeNode* leftChild = lowestCommonAncestor(root->left, p, q);
-        TreeNode* rightChild = lowestCommonAncestor(root->right, p, q);
+    };
 
-        if(leftChild != NULL && rightChild != NULL){
-            return root;
-        }
+ 
 
-        if(leftChild == NULL){
-            return rightChild;
-        }
+************************************************************/
 
-        if(rightChild == NULL){
-            return leftChild;
-        }
-        return NULL;
+ 
+
+int lowestCommonAncestor(TreeNode<int> *root, int x, int y){
+
+    //    Write your code here
+
+    if(root == NULL){
+        return -1;
     }
-};
+
+    if(root->data == x || root->data == y){
+        return root->data;
+    }
+
+    int leftChild = lowestCommonAncestor(root->left, x, y);
+    int rightChild = lowestCommonAncestor(root->right, x, y);
+
+    if(leftChild == -1){
+        return rightChild;
+    }
+
+    else if(rightChild == -1){
+        return leftChild;
+    }
+    return root->data;
+}

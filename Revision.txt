@@ -622,3 +622,11 @@ we won't explore its children any more; we shall return as it is.
 
 Upon returning, if either of the children is NULL (left or right), we shall return the other child. If both are NULL, 
 it means we have gotten the desired result. Both the nodes lie under this ancestor. We shall return the node itself.
+
+<<Check Identical Trees>>
+TC: O(N) | SC: O(1)
+
+If the current node's data, left child and right child of all the nodes are equal for the two given binary trees, we can call 
+them identical. Also, if two nodes of the trees are simultaneously NULL, we can call them identical. 
+
+For all other cases, we will be calling them non-identical.

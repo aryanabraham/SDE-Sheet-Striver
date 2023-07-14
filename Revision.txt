@@ -607,3 +607,18 @@ tree is not balanced. We shall return -1 in both the cases. For all other cases,
 
 NOTE: If left sub-tree of any node is equal to NULL, we do not need to check the right node. Hence, we declare a sub-tree 
 as unbalanced even if only the leftHeight of a sub-tree is -1.
+
+<<LCA of Binary Tree>>
+TC: O(N) | SC: O(1)
+
+If we find the path to both the nodes from the root and then compare them, we will be occupying an extra array. To achieve 
+O(1) space complexity, we can think about traversing the tree using recursive Depth First Search.
+
+NOTE: In trees, a DFS is nothing but moving towards the left subtree of a node till we encounter a null and then returning 
+and exploring the right nodes encountered on the way in reverse order
+
+For a node, we wil explore its children. If root is NULL, we shall return it. Also, if root is equal to either of the desired nodes, 
+we won't explore its children any more; we shall return as it is. 
+
+Upon returning, if either of the children is NULL (left or right), we shall return the other child. If both are NULL, 
+it means we have gotten the desired result. Both the nodes lie under this ancestor. We shall return the node itself.

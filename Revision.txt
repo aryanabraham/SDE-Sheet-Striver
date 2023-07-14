@@ -630,3 +630,23 @@ If the current node's data, left child and right child of all the nodes are equa
 them identical. Also, if two nodes of the trees are simultaneously NULL, we can call them identical. 
 
 For all other cases, we will be calling them non-identical.
+
+<<Boundary Traversal>>
+TC: O(N) | SC: O(N)
+
+If we were to store all nodes in left boundary (excluding leaf nodes), followed by the leaf nodes, and finally all the nodes in 
+the right boundary in reverse (excluding leaf nodes), we will get the boundary traversal of the tree in anti-clockwise direction.
+
+To obtain all the nodes in the left boundary, push into ___ the root of the tree and then do a DFS of the tree 
+(keep going left till exhausted; then go right) starting from its left child. As soon as the first leaf node is encountered, 
+stop the traversal as the left boundary traversal has been completed.
+
+Now, in order to get the lead nodes, we need to perform an pre-order traversal and add them to the ___.
+
+NOTE: A level-order traversal is not feasible as we need the leaf nodes from the bottom.
+
+Finally, in order to get the right boundary, we will perform a DFS (keep going right till first exhausted; then go left) 
+starting from the right child of the root and store them in a stack. As soon as the first leaf node is encountered, 
+we will stop our traversal as the right boundary traversal has been completed. Now, we can push the nodes in the solution array 
+as stack will return the nodes in reverse order.
+

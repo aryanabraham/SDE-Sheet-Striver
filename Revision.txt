@@ -664,3 +664,12 @@ Now, take mod of k and (n-1)! to find which permutation is the desired result [s
 size of num.
 
 Reduce k to k%(n-1)! and fact to (n-1-1)!. Repeat the process till size of numbers is not zero.
+
+<<BFS>>
+TC: O( ) | SC: O( )
+
+Take a queue and initialize it with the starting node and create a 'visited' array of size 1 greater than the largest 
+value in graph (if 1-based; else if 0-based, create array of size equal to the greatest value). 
+Mark the starting node as 1 and rest as 0. Elements that are in queue will be considered as visited.
+
+Simultaneously take out elements from queue and print them till it becomes empty. 

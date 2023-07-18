@@ -650,3 +650,17 @@ starting from the right child of the root and store them in a stack. As soon as 
 we will stop our traversal as the right boundary traversal has been completed. Now, we can push the nodes in the solution array 
 as stack will return the nodes in reverse order.
 
+<<Kth Permutation Sequence>>
+TC: O(N^2) | SC: O(N) 
+
+If we were to fix the first digit, then (n-1)! permutations can be generated. Reduce (n-1)! from k till it is greater than 0.
+Now, fix two digits to get a more precise result. Repeat the process till k becomes 0.
+
+Calculate fact = (n-1)! whilest populating an array to store the sequence. Since the number of permutations generated with one 
+integer fixed are (n-1)!, each set of integers will be of the same size. 
+Divide k by (n-1)! to get which integer set to narrow are search down to (zero-based indexing).
+
+Now, take mod of k and (n-1)! to find which permutation is the desired result [since k*(n/k) + (n%k) = n] and reduce sample
+size of num.
+
+Reduce k to k%(n-1)! and fact to (n-1-1)!. Repeat the process till size of numbers is not zero.

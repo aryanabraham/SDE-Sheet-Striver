@@ -696,3 +696,10 @@ into the queue and mark it as visited. Now, visit its neighbors using the adjace
 
 If neighbors are not visited, call dfsTraversal recursively and pass the neighbor as the starting node. Finally, return 
 answer array.
+
+<<Fibonacci Number: Memoization>>
+TC: O(N) | SC: O(N) [stack space] + O(N) [dp array] 
+
+Declare an array 'dp' of size 1 greater than n and populate it with -1. To the regular recursive code of fibonacci number, 
+add the condition: if dp[n] is not equal to -1, return dp[n]. Also store the result of the base case i.e. fib(n-1) + fib(n-2),
+in dp[n].

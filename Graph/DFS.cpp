@@ -5,29 +5,29 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   private:
-    void dfsTraversal(int node, vector<int> adj[], vector<bool> &visited, vector<int> &dfsVertices){
+    //reference?
+  
+    void dfsTraversal(int node, vector<bool> &visited, vector<int> adj[], vector<int> &dfsVertices){
         visited[node] = true;
         dfsVertices.push_back(node);
         
         for(auto &it: adj[node]){
             if(!visited[it]){
-                dfsTraversal(it, adj, visited, dfsVertices);
+                dfsTraversal(it, visited, adj, dfsVertices);
             }
         }
     }
-    
+  
   public:
     // Function to return a list containing the DFS traversal of the graph.
     vector<int> dfsOfGraph(int V, vector<int> adj[]) {
         // Code here
-        queue<int> q;
         vector<int> dfsVertices;
         vector<bool> visited(V, false);
-    
-        q.push(0);
+        
         visited[0] = true;
         
-        dfsTraversal(0, adj, visited, dfsVertices);
+        dfsTraversal(0, visited, adj, dfsVertices);
         return dfsVertices;
     }
 };

@@ -3,3 +3,11 @@ Max of Min / Min of Max: BINARY SEARCH
 Generate all ways (count/best way): RECURSION => DYNAMIC PROGRAMMING
 Counting unique: HASHING
 Dimensions of binary tree: STACK/QUEUE (run till empty) or HEIGHT OF TREE MANIPULATION
+
+Recurrence Relationship Shortcut
+-Try to represent problem in terms of index
+-Perform all possible operations on index according to problem statement
+-If count all ways, find sum of all results
+-If min/max, find min/max of all results
+
+RR -> Recursion -> DP (Memoization) -> DP (Tabulation) -> DP (Space Optimization)

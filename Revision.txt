@@ -688,9 +688,8 @@ push them into the queue and mark them as visited. Repeat this process till the 
 <<DFS>>
 TC: O(N) + O(2E) | SC: O(N)
 
-Declare a queue and a boolean 'visited' array of size equal to number of vertices and initial value of false. Insert the 
-starting node into the queue and mark it as visited. Also declare an array 'answer' to store the vertices of graph 
-traversed using Depth-First Search.
+Declare a boolean 'visited' array of size equal to number of vertices and initial value of false. Mark the starting node 
+as visited and declare an array 'answer' to store the vertices of graph traversed using Depth-First Search.
 
 Declare a function 'dfsTraversal' and pass the starting node, adjacency list, visited array and answer to it. Push the node 
 into the queue and mark it as visited. Now, visit its neighbors using the adjacency list. 

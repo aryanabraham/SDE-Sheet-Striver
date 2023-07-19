@@ -666,10 +666,21 @@ size of num.
 Reduce k to k%(n-1)! and fact to (n-1-1)!. Repeat the process till size of numbers is not zero.
 
 <<BFS>>
-TC: O( ) | SC: O( )
+TC: O(N) + O(2E) | SC: O(N)
 
 Take a queue and initialize it with the starting node and create a 'visited' array of size 1 greater than the largest 
 value in graph (if 1-based; else if 0-based, create array of size equal to the greatest value). 
 Mark the starting node as 1 and rest as 0. Elements that are in queue will be considered as visited.
 
 Simultaneously take out elements from queue and print them till it becomes empty. 
+
+Declare a queue to hold the vertices of the graph as we traverse it. Declare a 'visited' array, with size equal to the 
+number of vertices (if 0-based indexing; else if 1-based indexing, size is 1 greater than number of vertices) and 
+initialize each value in it as 0. Lastly, declare an 'answer' vector that shall store the vertices of the graph when 
+traversed using Breadth-First Search.
+
+Push the starting node into the queue and mark it as visited in the array. Pop the vertex at the front of the queue 
+and insert it into the answer. Now, check whether its neighbors are visited or not. 
+
+Using the adjacency list, acquire the neighbors and check their status in the visited array. If they are not visited yet,
+push them into the queue and mark them as visited. Repeat this process till the queue is not empty.

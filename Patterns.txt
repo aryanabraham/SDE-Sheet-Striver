@@ -10,7 +10,11 @@ Recurrence Relationship Shortcut
 -If count all ways, find sum of all results
 -If min/max, find min/max of all results
 
-RR -> Recursion -> DP (Memoization) -> DP (Tabulation) -> DP (Space Optimization)
+RR 
+-> Recursion [TC: O(2^N) | SC: O(N) + stack space O(N)] 
+-> DP (Memoization; top-down, recursive) [TC: O(N) | SC: O(N) + stack space O(N)] 
+-> DP (Tabulation; bottom-up, iterative) [TC: O(N) | SC: O(N)]
+-> DP (Space Optimization, iterative)  [TC: O(N) | SC: O(1)]
 
 Recursion to DP 
 

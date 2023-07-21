@@ -14,7 +14,9 @@ RR
 -> Recursion [TC: O(2^N) | SC: O(N) + stack space O(N)] 
 -> DP (Memoization; top-down, recursive) [TC: O(N) | SC: O(N) + stack space O(N)] 
 -> DP (Tabulation; bottom-up, iterative) [TC: O(N) | SC: O(N)]
--> DP (Space Optimization, iterative)  [TC: O(N) | SC: O(1)]
+-> DP (Space Optimization, iterative)  [TC: O(N) | SC: O(1)] 
+
+NOTE: Space Optimization is possible ONLY if terms like dp[i-1], dp[i-2] etc exist in Tabulation
 
 Recursion to DP 
 

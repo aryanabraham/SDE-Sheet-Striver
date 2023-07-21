@@ -11,3 +11,10 @@ Recurrence Relationship Shortcut
 -If min/max, find min/max of all results
 
 RR -> Recursion -> DP (Memoization) -> DP (Tabulation) -> DP (Space Optimization)
+
+Recursion to DP 
+
+1. Create dp array of n+1 and initialize it to -1
+2. When calling a recursion, check if previously 
+   computed (and stored) in dp array
+3. Before returning, store result in dp array
